@@ -9,7 +9,7 @@ from keras.layers import Convolution2D, MaxPooling2D
 from keras.callbacks import ModelCheckpoint
 #from keras.layers.convolutional import Conv2D
 from keras.layers import Conv2D
-#
+
 from keras.backend import image_data_format
 from sklearn.model_selection import train_test_split
 np.random.seed(1337)  # for reproducibility
@@ -17,7 +17,7 @@ import sys
 
 if __name__ == '__main__':
     img_rows, img_cols = 50, 50 # input image dimensions
-    folder_list = ["cs_sycamore","pine_douglas_fir_home_depot","red_oak_sub","rockler_bubinga","rockler_cherry","rockler_poplar","small_set_mahogany","small_set_pine"]
+    folder_list = ["Go","GoBachDan","GoLim","GoSoi","GoThong","GoTrac","GoTram","GoXoan"]
     X, y = prep_total_pipeline(folder_list, img_rows, limit=7)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -84,4 +84,7 @@ if __name__ == '__main__':
     print('Test score:', score[0])
     print('Test accuracy:', score[1]) # this is the one we care about
 
-    model.save('models\model.h5')
+    model.save('models/model.h5')
+
+# /home/huuly/wood-ai/storage/mobilenet_model
+# sudo docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t emacski/tensorflow-serving

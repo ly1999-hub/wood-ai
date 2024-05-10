@@ -137,6 +137,5 @@ if __name__ == '__main__':
     l1.append(image)
     rotated = rotate_images_4x(l1)
     mirrored_rotated = mirror_images(rotated)
-    print("hello")
 
 
