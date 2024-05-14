@@ -17,7 +17,7 @@ import sys
 
 if __name__ == '__main__':
     img_rows, img_cols = 50, 50 # input image dimensions
-    folder_list = ["Go","GoBachDan","GoLim","GoSoi","GoThong","GoTrac","GoTram","GoXoan"]
+    folder_list = ["GoGioBau","GoBachDan","GoLim","GoSoi","GoThong","GoTrac","GoTram","GoXoan"]
     X, y = prep_total_pipeline(folder_list, img_rows, limit=7)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
@@ -87,4 +87,7 @@ if __name__ == '__main__':
     model.save('models/model.h5')
 
 # /home/huuly/wood-ai/storage/mobilenet_model
-# sudo docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t emacski/tensorflow-serving
+# sudo docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t tensorflow/serving
+#docker run -p 8501:8501 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t tensorflow/serving:latest-arm64
+# "Chu Chim Co Don":
+#         password: "f4c382d614ff3445d963f59056bd3d8026e82c8827e575b2e2df736912e09de1"
