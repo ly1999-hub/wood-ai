@@ -4,9 +4,9 @@ import numpy as np
 from PIL import Image
 
 # Load the model from the .h5 file
-model = load_model('./models/model_prev.h5')
-img = Image.open("./GoBachDan/20170920_202750.jpg")
-img = img.resize((224, 224))
+model = load_model('./models/model.h5')
+img = Image.open("./data/meo/images6.jpg")
+img = img.resize((50, 50))
 img_array = np.array(img) / 255.0  # Chuẩn hóa giá trị pixel từ 0-255 thành 0-1
 
 # Reshape ảnh để phù hợp với input shape của mô hình

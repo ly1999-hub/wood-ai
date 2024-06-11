@@ -89,5 +89,3 @@ if __name__ == '__main__':
 # /home/huuly/wood-ai/storage/mobilenet_model
 # sudo docker run -p 8501:8501 -p 8500:8500 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t tensorflow/serving
 #docker run -p 8501:8501 --mount type=bind,source=/home/huuly/wood-ai/storage/mobilenet_model,target=/models/wood -e MODEL_NAME=wood -t tensorflow/serving:latest-arm64
-# "Chu Chim Co Don":
-#         password: "f4c382d614ff3445d963f59056bd3d8026e82c8827e575b2e2df736912e09de1"

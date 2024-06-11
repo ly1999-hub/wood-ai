@@ -58,11 +58,7 @@ checkpoit =ModelCheckpoint("models/best.hdf5",monitor='val_loss',save_best_only=
 callback_list=[checkpoit]
 step_train=int(train_generator.n)//batch_size
 step_val =int(validation_generator.n)//batch_size
-# model.fit_generator(generator=train_generator,steps_per_epoch=step_train,
-#                     validation_data=validation_generator,
-#                     validation_steps=step_val,
-#                     callbacks=callback_list,
-#                     epochs=n_epochs)
+
 model.fit(
     train_generator,
     steps_per_epoch=step_train,
@@ -71,13 +67,6 @@ model.fit(
     callbacks=callback_list,
     epochs=n_epochs
 )
-# model.fit(
-#     train_generator,
-#     steps_per_epoch=step_train,
-#     validation_data=validation_generator,
-#     validation_steps=step_val,
-#     callbacks=callback_list,
-#     epochs=n_epochs
-# )
+
 # 6. lưu model
 model.save("models/model_prev.h5")
